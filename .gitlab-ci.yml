@@ -14,14 +14,14 @@ cache:
 
 # Stages
 stages:
-- build
+#- build
 - publish
 
 # Build
-Assemble:
-  stage: build
-  script:
-  - ./gradlew assemble
+#Assemble:
+#  stage: build
+#  script:
+#  - ./gradlew assemble
 
 # Publish
 Publish:
