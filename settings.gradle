@@ -1,1 +1,6 @@
-rootProject.name = 'springboot-webflux-swagger-starter'
+include 'webflux-swagger'
+
+rootProject.name = 'springboot'
+rootProject.children.each {
+    it.name = rootProject.name + "-" + it.name
+}

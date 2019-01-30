@@ -1,5 +1,6 @@
-# Spring Boot - Swagger WebFlux
-> A spring boot starter project to configure springfox for a swagger api documentation.
+# Spring Boot - A collection of starter modules
+
+> A collection of spring boot libraries.
 
 ## Requirements
 

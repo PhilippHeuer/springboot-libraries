@@ -1,0 +1,16 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // SpringFox
+    compile group: 'io.springfox', name: 'springfox-swagger2'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui'
+    compile group: 'io.springfox', name: 'springfox-spring-webflux'
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-WebFluxSwagger'
+    artifactDescription = 'SpringBoot WebFlux Swagger Component'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

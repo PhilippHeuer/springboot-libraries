@@ -15,17 +15,40 @@ cache:
 # Stages
 stages:
 - build
-- publish
+- test
+- publishStage
+- publishStable
 
+# Build
 Assemble:
   stage: build
   script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
   - ./gradlew assemble
 
-# Publish
-Publish:
-  stage: publish
+# Test
+Run Tests:
+  stage: test
   script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - ./gradlew test
+
+# Pre-Release
+Publish Prerelease:
+  stage: publishStage
+  script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - ./gradlew artifactoryPublish -Dsnapshot=true
+  only:
+  - /^v[0-9]+\.[0-9]+\.[0-9]+\-alpha\.[0-9]+$/
+  - /^v[0-9]+\.[0-9]+\.[0-9]+\-beta\.[0-9]+$/
+  - /^v[0-9]+\.[0-9]+\.[0-9]+\-rc\.[0-9]+$/
+
+# Stable Release
+Publish Release:
+  stage: publishStable
+  script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
   - ./gradlew bintrayUpload
   only:
   - /^v[0-9]+\.[0-9]+\.[0-9]+$/
