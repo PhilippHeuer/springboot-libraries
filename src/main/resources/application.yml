@@ -1,0 +1,9 @@
+# WebServer
+server:
+  port: 8080
+
+# Service
+service:
+  name: test
+  description: test
+  version: 1.0

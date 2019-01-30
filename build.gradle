@@ -1,0 +1,76 @@
+plugins {
+    id 'java'
+    id 'eclipse'
+    id 'idea'
+    id 'io.spring.dependency-management' version '1.0.6.RELEASE'
+    id 'org.springframework.boot' version '2.1.2.RELEASE'
+    id "com.github.ben-manes.versions" version '0.20.0'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.4'
+    id 'com.jfrog.artifactory' version '4.8.1'
+}
+
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+// Repositories
+repositories {
+    jcenter()
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+}
+
+// Spring Boot
+bootRun {
+    // run bootRun in testContext
+    classpath = sourceSets.test.runtimeClasspath
+}
+
+// Dependency Management
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.2.RELEASE'
+    }
+    dependencies {
+        // Logging
+        dependency group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+        // Testing
+        dependency group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
+        dependency group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
+    }
+}
+
+// Dependencies
+dependencies {
+    // Spring Boot - WebFlux
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux'
+
+    // Logging
+    compile group: 'org.slf4j', name: 'slf4j-api'
+
+    // SpringFox
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0-SNAPSHOT'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0-SNAPSHOT'
+    compile group: 'io.springfox', name: 'springfox-spring-webflux', version: '3.0.0-SNAPSHOT'
+
+    // Spring Boot - Test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine'
+}
+
+// Artifact Info
+project.ext {
+    groupId = 'com.github.philippheuer.springboot'
+    artifactNamespace = 'PhilippHeuer'
+    artifactName = 'springboot-webflux-swagger-starter'
+    artifactVersion = String.valueOf(System.getenv("CI_COMMIT_REF_NAME")).replace("v", "")
+    artifactDescription = 'Spring Boot WebFlux Swagger Starter'
+    websiteUrl = 'https://github.com/PhilippHeuer/springboot-webflux-swagger-starter'
+    issueTrackerUrl = 'https://github.com/PhilippHeuer/springboot-webflux-swagger-starter/issues'
+    vcsUrl = 'https://github.com/PhilippHeuer/springboot-webflux-swagger-starter.git'
+}
+
+// Deployment Script
+apply from: 'deployment.gradle'
