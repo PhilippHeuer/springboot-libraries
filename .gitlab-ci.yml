@@ -15,7 +15,6 @@ cache:
 # Stages
 stages:
 - build
-- test
 - publishStage
 - publishStable
 
@@ -25,13 +24,6 @@ Assemble:
   script:
   - export GRADLE_USER_HOME=`pwd`/.gradle
   - ./gradlew assemble
-
-# Test
-Run Tests:
-  stage: test
-  script:
-  - export GRADLE_USER_HOME=`pwd`/.gradle
-  - ./gradlew test
 
 # Pre-Release
 Publish Prerelease:
