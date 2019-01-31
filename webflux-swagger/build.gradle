@@ -1,7 +1,7 @@
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // Spring WebFlux
-    compile group: 'org.springframework', name: 'spring-webflux'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux'
 
     // SpringFox
     compile group: 'io.springfox', name: 'springfox-swagger2'
