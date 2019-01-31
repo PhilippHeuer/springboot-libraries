@@ -8,7 +8,19 @@
 
 ## Installation
 
+### Gradle
+
+```java
 ...
+```
+
+## Usage
+
+Add the following import to your application class.
+
+```java
+@Import(WebFluxSwaggerModule.class)
+```
 
 ## License
 
