@@ -3,7 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.6.RELEASE'
     id 'com.jfrog.bintray' version '1.8.4'
     id 'com.jfrog.artifactory' version '4.8.1'
-    id 'org.springframework.boot' version '2.0.6.RELEASE' apply false
+    id 'org.springframework.boot' version '2.1.2.RELEASE' apply false
 }
 
 // All-Projects
@@ -19,9 +19,9 @@ allprojects {
     project.ext {
         groupId = 'com.github.philippheuer.springboot'
         artifactNamespace = 'philippheuer'
-        artifactName = 'springboot-core'
+        artifactName = null
         artifactVersion = String.valueOf(System.getenv("CI_COMMIT_REF_NAME")).replace("v", "") + (Boolean.valueOf(System.getProperty("snapshot")) ? "-SNAPSHOT" : "")
-        artifactDescription = 'Spring Boot WebFlux Swagger Starter'
+        artifactDescription = 'Spring Boot Libraries'
         websiteUrl = 'https://github.com/philippheuer/springboot-libraries'
         issueTrackerUrl = 'https://github.com/philippheuer/springboot-libraries/issues'
         vcsUrl = 'https://github.com/philippheuer/springboot-libraries.git'
@@ -71,7 +71,10 @@ subprojects {
             compile group: 'org.slf4j', name: 'slf4j-api'
 
             // Lombok
-            compile group: 'org.projectlombok', name: 'lombok'
+            compileOnly group: 'org.projectlombok', name: 'lombok'
+            annotationProcessor group: 'org.projectlombok', name: 'lombok'
+            testCompile group: 'org.projectlombok', name: 'lombok'
+            testAnnotationProcessor group: 'org.projectlombok', name: 'lombok'
 
             // Test
             testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api'
