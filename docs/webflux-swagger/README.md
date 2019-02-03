@@ -3,12 +3,14 @@
 ## Installation
 
 ```java
-compile 'com.github.philippheuer.springboot:springboot-webfluxswagger:0.0.5'
+compile 'com.github.philippheuer.springboot:springboot-webfluxswagger:version'
 ```
 or (with UI)
 ```java
-compile 'com.github.philippheuer.springboot:springboot-webfluxswaggerui:0.0.5'
+compile 'com.github.philippheuer.springboot:springboot-webfluxswaggerui:version'
 ```
+
+Get the latest version from bintray: https://bintray.com/beta/#/philippheuer/maven/springboot-webfluxswagger?tab=overview
 
 ## Usage
 
