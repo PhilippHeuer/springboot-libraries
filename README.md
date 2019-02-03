@@ -2,25 +2,11 @@
 
 > A collection of spring boot libraries.
 
-## Requirements
+## Modules
 
-- Java 8
+The following links contain the documentation for their respective modules.
 
-## Installation
-
-### Gradle
-
-```java
-...
-```
-
-## Usage
-
-Add the following import to your application class.
-
-```java
-@Import(WebFluxSwaggerModule.class)
-```
+- [WebFlux Swagger Module](docs/webflux-swagger/README.md)
 
 ## License
 

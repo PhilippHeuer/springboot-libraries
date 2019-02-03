@@ -50,14 +50,17 @@ subprojects {
             // Logging
             dependency group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
+            // Lombok
+            dependency group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+
+            // Testing
+            dependency group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.2'
+            dependency group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.2'
+
             // SpringFox
             dependency group: 'io.springfox', name: 'springfox-swagger2', version: '3.0.0-SNAPSHOT'
             dependency group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0-SNAPSHOT'
             dependency group: 'io.springfox', name: 'springfox-spring-webflux', version: '3.0.0-SNAPSHOT'
-
-            // Testing
-            dependency group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
-            dependency group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
         }
     }
 
@@ -66,6 +69,9 @@ subprojects {
         dependencies {
             // Logging
             compile group: 'org.slf4j', name: 'slf4j-api'
+
+            // Lombok
+            compile group: 'org.projectlombok', name: 'lombok'
 
             // Test
             testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api'

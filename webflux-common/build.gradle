@@ -1,0 +1,14 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // Spring WebFlux
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux'
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-WebfluxCommon'
+    artifactDescription = 'SpringBoot Common Library'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

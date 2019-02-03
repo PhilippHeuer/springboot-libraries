@@ -1,9 +1,12 @@
-package com.github.philippheuer.swaggerwebflux;
+package com.github.philippheuer.swaggerwebflux.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
 
+/**
+ * WebFlux Swagger Resource Handlers
+ */
 @Configuration
 public class WebfluxConfiguration implements WebFluxConfigurer {
 
