@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * SwaggerRewriteWebFilter
  * <p>
- *
+ * Rewrites api-docs.json to /v2/api-docs
  */
 @Component
 public class SwaggerRewriteWebFilter extends UrlPathRewriteFilter {
