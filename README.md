@@ -10,4 +10,4 @@ The following links contain the documentation for their respective modules.
 
 ## License
 
-MIT
+Released under the [MIT license](./LICENSE).
