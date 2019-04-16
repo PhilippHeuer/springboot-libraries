@@ -1,0 +1,19 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-webflux-common')
+    compile project(':' + rootProject.name + '-events')
+
+    // Apache Commons
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-WebFluxError'
+    artifactDescription = 'SpringBoot WebFlux Error Component'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'
