@@ -1,4 +1,4 @@
-include 'webflux-swagger', 'webflux-swagger-ui', 'webflux-common', 'events', 'webflux-error'
+include 'webflux-swagger', 'webflux-swagger-ui', 'webflux-common', 'events', 'webflux-error', 'webflux-tracing', 'webflux-tracing-jaeger'
 
 rootProject.name = 'springboot'
 rootProject.children.each {

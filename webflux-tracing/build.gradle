@@ -1,0 +1,21 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-webflux-common')
+
+    // OpenTracing
+    compile group: 'io.opentracing.contrib', name: 'opentracing-spring-cloud-starter', version: '0.2.4'
+    compile group: 'io.opentracing.contrib', name: 'opentracing-spring-jaeger-cloud-starter', version: '1.0.3'
+    compile group: 'io.opentracing.contrib', name: 'opentracing-spring-web-starter', version: '1.1.2' // overwrite cloud-starter for latest web-starter version (webflux)
+    compile group: 'io.opentracing.contrib', name: 'opentracing-concurrent', version: '0.2.1' // workaround until ReactorTracingAutoConfiguration will be released
+    compile group: 'io.opentracing.contrib', name: 'opentracing-reactor', version: '0.0.2' // workaround until ReactorTracingAutoConfiguration will be released
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-WebFluxTracing'
+    artifactDescription = 'SpringBoot WebFlux Tracing Support'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'
