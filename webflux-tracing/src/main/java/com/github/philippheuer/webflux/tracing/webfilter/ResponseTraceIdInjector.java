@@ -1,12 +1,14 @@
 package com.github.philippheuer.webflux.tracing.webfilter;
 
+import com.github.philippheuer.webflux.tracing.config.ReactorTracingAutoConfiguration;
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
 import io.opentracing.propagation.TextMapInjectAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.server.ServerWebExchange;
@@ -22,8 +24,9 @@ import java.util.Map;
  * <p>
  * Injects the trace id into the the response headers (based on the used codec)
  */
-@Component
-@Order(Integer.MAX_VALUE)
+@Configuration
+@AutoConfigureAfter(ReactorTracingAutoConfiguration.class)
+@Order
 public class ResponseTraceIdInjector implements WebFilter {
 
     @Autowired
