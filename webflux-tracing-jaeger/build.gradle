@@ -6,6 +6,7 @@ dependencies {
     // OpenTracing Implementation
     compile group: 'io.jaegertracing', name: 'jaeger-core', version: '0.34.0'
     compile group: 'io.jaegertracing', name: 'jaeger-thrift', version: '0.34.0'
+    compile group: 'io.jaegertracing', name: 'jaeger-tracerresolver', version: '0.34.0'
 }
 
 // Artifact Info

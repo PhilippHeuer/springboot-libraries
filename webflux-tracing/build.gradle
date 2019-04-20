@@ -9,6 +9,7 @@ dependencies {
     compile group: 'io.opentracing.contrib', name: 'opentracing-spring-web-starter', version: '1.1.2' // overwrite cloud-starter for latest web-starter version (webflux)
     compile group: 'io.opentracing.contrib', name: 'opentracing-concurrent', version: '0.2.1' // workaround until ReactorTracingAutoConfiguration will be released
     compile group: 'io.opentracing.contrib', name: 'opentracing-reactor', version: '0.0.2' // workaround until ReactorTracingAutoConfiguration will be released
+    compile group: 'io.opentracing.contrib', name: 'opentracing-api-extensions', version: '0.4.0'
 }
 
 // Artifact Info
