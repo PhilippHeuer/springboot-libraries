@@ -32,9 +32,11 @@ public class ResponseTraceIdInjector implements WebFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
         // inject tracing information into the response headers
-        Map<String, String> tracingHeaders = new HashMap<>();
-        tracer.inject(tracer.activeSpan().context(), Format.Builtin.HTTP_HEADERS, new TextMapAdapter(tracingHeaders));
-        exchange.getResponse().getHeaders().addAll(convertMapToMultiValueMap(tracingHeaders));
+        if (tracer.activeSpan() != null) {
+            Map<String, String> tracingHeaders = new HashMap<>();
+            tracer.inject(tracer.activeSpan().context(), Format.Builtin.HTTP_HEADERS, new TextMapAdapter(tracingHeaders));
+            exchange.getResponse().getHeaders().addAll(convertMapToMultiValueMap(tracingHeaders));
+        }
 
         return chain.filter(exchange);
     }
