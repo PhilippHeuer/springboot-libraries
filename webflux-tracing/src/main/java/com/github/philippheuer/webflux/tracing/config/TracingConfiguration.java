@@ -3,6 +3,7 @@ package com.github.philippheuer.webflux.tracing.config;
 import io.opentracing.Tracer;
 import io.opentracing.contrib.spring.web.webfilter.TracingWebFilter;
 import io.opentracing.contrib.spring.web.webfilter.WebFluxSpanDecorator;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,7 @@ import java.util.regex.Pattern;
  */
 @Configuration
 @ConditionalOnProperty(name = "opentracing.enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBean(Tracer.class)
 class TracingConfiguration {
 
     @Bean

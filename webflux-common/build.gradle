@@ -7,7 +7,7 @@ dependencies {
 // Artifact Info
 project.ext {
     artifactName = 'SpringBoot-WebfluxCommon'
-    artifactDescription = 'SpringBoot Common Library'
+    artifactDescription = 'SpringBoot WebFlux Common Library'
 }
 
 // Deployment Script

@@ -4,6 +4,8 @@ import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
 import io.opentracing.propagation.TextMapAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
@@ -23,6 +25,8 @@ import java.util.Map;
  * Injects the trace id into the the response headers (based on the used codec)
  */
 @Component
+@ConditionalOnClass(org.springframework.web.server.WebFilter.class)
+@ConditionalOnProperty(name = "opentracing.responseTraceIdInjector", havingValue = "true", matchIfMissing = true)
 @Order
 public class ResponseTraceIdInjector implements WebFilter {
 

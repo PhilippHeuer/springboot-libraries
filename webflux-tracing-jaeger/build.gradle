@@ -4,9 +4,10 @@ dependencies {
     compile project(':' + rootProject.name + '-webflux-tracing')
 
     // OpenTracing Implementation
-    compile group: 'io.jaegertracing', name: 'jaeger-core', version: '0.34.0'
-    compile group: 'io.jaegertracing', name: 'jaeger-thrift', version: '0.34.0'
-    compile group: 'io.jaegertracing', name: 'jaeger-tracerresolver', version: '0.34.0'
+    compile group: 'io.opentracing.contrib', name: 'opentracing-spring-jaeger-cloud-starter', version: '2.0.0'
+    compile group: 'io.jaegertracing', name: 'jaeger-core', version: '0.35.5'
+    compile group: 'io.jaegertracing', name: 'jaeger-thrift', version: '0.35.5'
+    compile group: 'io.jaegertracing', name: 'jaeger-tracerresolver', version: '0.35.5'
 }
 
 // Artifact Info
