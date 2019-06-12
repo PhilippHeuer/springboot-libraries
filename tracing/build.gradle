@@ -17,7 +17,7 @@ dependencies {
 
 // Artifact Info
 project.ext {
-    artifactName = 'SpringBoot-WebFluxTracing'
+    artifactName = 'SpringBoot-Tracing'
     artifactDescription = 'SpringBoot WebFlux Tracing Support'
 }
 

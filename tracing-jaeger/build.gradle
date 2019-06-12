@@ -12,7 +12,7 @@ dependencies {
 
 // Artifact Info
 project.ext {
-    artifactName = 'SpringBoot-WebFluxTracing-Jaeger'
+    artifactName = 'SpringBoot-Tracing-Jaeger'
     artifactDescription = 'SpringBoot WebFlux Tracing Jaeger Implementation'
 }
 
