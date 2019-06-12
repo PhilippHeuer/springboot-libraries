@@ -4,7 +4,6 @@ import io.opentracing.contrib.metrics.MetricsReporter;
 import io.opentracing.contrib.metrics.micrometer.MicrometerMetricsReporter;
 import io.opentracing.contrib.metrics.spring.autoconfigure.MetricsTracerObserverConfiguration;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,7 +15,6 @@ import java.util.Set;
  */
 @Configuration
 @AutoConfigureBefore(MetricsTracerObserverConfiguration.class)
-@ConditionalOnClass(MicrometerMetricsReporter.class)
 public class SetupTracingMetrics {
 
     @Bean
@@ -25,7 +23,7 @@ public class SetupTracingMetrics {
 
         // micrometer reporter
         reporters.add(MicrometerMetricsReporter.newMetricsReporter()
-            .withName("tracing")
+            .withName("trace")
             .build()
         );
 

@@ -2,6 +2,7 @@
 dependencies {
     // Modules
     compile project(':' + rootProject.name + '-boot-common')
+    compile project(':' + rootProject.name + '-metrics-prometheus')
 
     // Runtime Modules
     compileOnly project(':' + rootProject.name + '-webflux-common')
