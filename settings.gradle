@@ -1,4 +1,4 @@
-include 'boot-common', 'metrics-prometheus', 'events', 'webflux-common', 'webflux-swagger', 'webflux-swagger-ui', 'webflux-error', 'webflux-tracing', 'webflux-tracing-jaeger'
+include 'boot-common', 'metrics-prometheus', 'events', 'webflux-common', 'webflux-swagger', 'webflux-swagger-ui', 'webflux-error', 'tracing', 'tracing-jaeger'
 
 rootProject.name = 'springboot'
 rootProject.children.each {

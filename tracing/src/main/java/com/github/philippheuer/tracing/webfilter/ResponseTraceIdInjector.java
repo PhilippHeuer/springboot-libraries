@@ -1,4 +1,4 @@
-package com.github.philippheuer.webflux.tracing.webfilter;
+package com.github.philippheuer.tracing.webfilter;
 
 import io.opentracing.Tracer;
 import io.opentracing.propagation.Format;
@@ -31,7 +31,7 @@ import java.util.Map;
 public class ResponseTraceIdInjector implements WebFilter {
 
     @Autowired
-    Tracer tracer;
+    private Tracer tracer;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {

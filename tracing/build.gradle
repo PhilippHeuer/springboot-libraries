@@ -1,7 +1,10 @@
 // In this section you declare the dependencies for your production and test code
 dependencies {
     // Modules
-    compile project(':' + rootProject.name + '-webflux-common')
+    compile project(':' + rootProject.name + '-boot-common')
+
+    // Runtime Modules
+    compileOnly project(':' + rootProject.name + '-webflux-common')
 
     // OpenTracing
     compile group: 'io.opentracing.contrib', name: 'opentracing-spring-cloud-starter', version: '0.3.1'

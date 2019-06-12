@@ -1,4 +1,4 @@
-package com.github.philippheuer.webflux.tracing.config;
+package com.github.philippheuer.tracing.config;
 
 import io.opentracing.contrib.metrics.MetricsReporter;
 import io.opentracing.contrib.metrics.micrometer.MicrometerMetricsReporter;

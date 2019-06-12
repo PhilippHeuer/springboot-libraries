@@ -1,4 +1,4 @@
-package com.github.philippheuer.webflux.tracing.config;
+package com.github.philippheuer.tracing.config;
 
 import io.opentracing.Tracer;
 import io.opentracing.contrib.spring.web.webfilter.TracingWebFilter;
@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 @Configuration
 @ConditionalOnProperty(name = "opentracing.enabled", havingValue = "true", matchIfMissing = true)
 @ConditionalOnBean(Tracer.class)
-class TracingConfiguration {
+public class TracingConfiguration {
 
     @Bean
     public TracingWebFilter tracingWebFilter(Tracer tracer) {
