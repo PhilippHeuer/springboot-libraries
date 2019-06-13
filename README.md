@@ -8,6 +8,7 @@ The following links contain the documentation for their respective modules.
 
 - [Boot Common Module](boot-common/README.md)
 - [Events Module](events/README.md)
+- [Error Reporting Module](error-reporting/README.md)
 - [Metrics Prometheus Module](metrics-prometheus/README.md)
 - [WebFlux Error Module](webflux-error/README.md)
 - [WebFlux Swagger Module](webflux-swagger/README.md)

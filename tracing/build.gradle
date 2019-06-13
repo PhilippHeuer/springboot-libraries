@@ -4,7 +4,7 @@ dependencies {
     compile project(':' + rootProject.name + '-boot-common')
     compile project(':' + rootProject.name + '-metrics-prometheus')
 
-    // Runtime Modules
+    // Optional Modules
     compileOnly project(':' + rootProject.name + '-webflux-common')
 
     // OpenTracing

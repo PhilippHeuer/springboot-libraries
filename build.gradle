@@ -3,7 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.6.RELEASE'
     id 'com.jfrog.bintray' version '1.8.4' apply false
     id 'com.jfrog.artifactory' version '4.8.1' apply false
-    id 'org.springframework.boot' version '2.1.2.RELEASE' apply false
+    id 'org.springframework.boot' version '2.1.5.RELEASE' apply false
 }
 
 // All-Projects
@@ -39,7 +39,7 @@ subprojects {
     apply plugin: 'com.jfrog.artifactory'
 
     // Source Compatiblity
-    sourceCompatibility = 1.8
+    sourceCompatibility = 11
 
     // Dependency Management for Subprojects
     dependencyManagement {
