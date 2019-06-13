@@ -4,11 +4,13 @@ import io.sentry.SentryClient;
 import io.sentry.event.BreadcrumbBuilder;
 import io.sentry.event.UserBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
 @Service
+@ConditionalOnBean(SentryClient.class)
 public class ErrorReportingService {
 
     @Autowired
