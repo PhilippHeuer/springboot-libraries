@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConditionalOnProperty(prefix = "sentry", name = "dsn", matchIfMissing = false)
+@ConditionalOnProperty(prefix = "errorreporting", name = "sentry.dsn", matchIfMissing = false)
 public class SentryAutoConfiguration {
 
     @Value("${sentry.dsn}")
