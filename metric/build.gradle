@@ -12,7 +12,7 @@ dependencies {
 
 // Artifact Info
 project.ext {
-    artifactName = 'SpringBoot-Metrics'
+    artifactName = 'SpringBoot-Metric'
     artifactDescription = 'SpringBoot Metric'
 }
 
