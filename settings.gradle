@@ -1,6 +1,20 @@
-include 'boot-common', 'metrics-prometheus', 'events', 'error-reporting', 'webflux-common', 'webflux-swagger', 'webflux-swagger-ui', 'webflux-error', 'tracing', 'tracing-jaeger'
+include 'boot-common',
+        'metric',
+        'metric-prometheus',
+        'metric-collector-api',
+        'metric-collector-camunda',
+        'events',
+        'error-reporting',
+        'webflux-common',
+        'webflux-swagger',
+        'webflux-swagger-ui',
+        'webflux-error',
+        'tracing',
+        'tracing-jaeger',
+        'job-starter',
+        'service-starter'
 
-rootProject.name = 'springboot'
+rootProject.name = 'springboot-lib'
 rootProject.children.each {
     it.name = rootProject.name + "-" + it.name
 }

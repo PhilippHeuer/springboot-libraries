@@ -2,6 +2,13 @@
 
 > A collection of spring boot libraries.
 
+## Starters
+
+Starter modules that contain common modules for a specific use-case.
+
+- [Service Starter](service-starter/README.md)
+- [Job Starter](job-starter/README.md)
+
 ## Modules
 
 The following links contain the documentation for their respective modules.

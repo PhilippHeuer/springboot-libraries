@@ -1,0 +1,20 @@
+// Dependencies
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-metric-collector-api')
+
+    // TODO: remove to make independent of camunda
+    compileOnly group: 'org.camunda.bpm.springboot', name: 'camunda-bpm-spring-boot-starter', version: '3.3.5'
+
+    // Actuator
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-Metrics'
+    artifactDescription = 'SpringBoot Metric'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

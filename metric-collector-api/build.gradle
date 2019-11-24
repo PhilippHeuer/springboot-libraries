@@ -1,0 +1,17 @@
+// Dependencies
+dependencies {
+    // Camunda
+    compileOnly group: 'org.camunda.bpm', name: 'camunda-engine'
+
+    // Micrometer
+    compileOnly group: 'io.micrometer', name: 'micrometer-core'
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-Metric-Collector-API'
+    artifactDescription = 'SpringBoot Metric Collector API'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

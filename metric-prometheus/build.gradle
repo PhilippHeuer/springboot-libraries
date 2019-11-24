@@ -2,18 +2,19 @@
 dependencies {
     // Modules
     compile project(':' + rootProject.name + '-boot-common')
+    compile project(':' + rootProject.name + '-metric')
 
-    // Actuator
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+    // Spring Web
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
 
     // Metrics
-    compile group: 'io.micrometer', name: 'micrometer-core', version: '1.1.4'
-    compile group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.1.4'
+    compile group: 'io.micrometer', name: 'micrometer-core'
+    compile group: 'io.micrometer', name: 'micrometer-registry-prometheus'
 }
 
 // Artifact Info
 project.ext {
-    artifactName = 'SpringBoot-Metrics-Prometheus'
+    artifactName = 'SpringBoot-Metric-Prometheus'
     artifactDescription = 'SpringBoot Metrics Prometheus'
 }
 

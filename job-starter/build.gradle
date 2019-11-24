@@ -1,0 +1,17 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-error-reporting')
+    compile project(':' + rootProject.name + '-events')
+    compile project(':' + rootProject.name + '-metric-prometheus')
+    compile project(':' + rootProject.name + '-tracing-jaeger')
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-Job-Starter'
+    artifactDescription = 'SpringBoot Job Starter'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

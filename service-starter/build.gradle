@@ -1,0 +1,20 @@
+// In this section you declare the dependencies for your production and test code
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-error-reporting')
+    compile project(':' + rootProject.name + '-events')
+    compile project(':' + rootProject.name + '-metric-prometheus')
+    compile project(':' + rootProject.name + '-tracing-jaeger')
+    compile project(':' + rootProject.name + '-webflux-common')
+    compile project(':' + rootProject.name + '-webflux-swagger')
+    compile project(':' + rootProject.name + '-webflux-error')
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-Service-Starter'
+    artifactDescription = 'SpringBoot Service Starter'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'
