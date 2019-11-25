@@ -19,11 +19,13 @@ public class PrometheusScrapeController {
 
     /**
      * Prometheus Scraper
+     * <p>
+     * Available at /prometheus by default, set metric.exporter.prometheus.endpoint to overwrite.
      *
-     * @param prefixFilter
-     * @return
+     * @param prefixFilter Prefix Filter
+     * @return Prometheus Scrape
      */
-    @RequestMapping("/prometheus")
+    @RequestMapping("${metric.exporter.prometheus.endpoint:/prometheus}")
     public ResponseEntity<String> filteredPrometheusExport(
         @RequestParam(value = "prefixFilter", required = false, defaultValue = "") List<String> prefixFilter
     ) {
@@ -31,11 +33,16 @@ public class PrometheusScrapeController {
         StringBuilder resultBuilder = new StringBuilder();
 
         prometheusScrape.lines().forEach(line -> {
-            prefixFilter.forEach(filter -> {
-                if (line.startsWith(filter) || line.startsWith("# HELP " + filter) || line.startsWith("# TYPE " + filter)) {
-                    resultBuilder.append(line + System.getProperty("line.separator"));
-                }
-            });
+            // do nothing if no prefixFilter was specified
+            if (prefixFilter.size() > 0) {
+                prefixFilter.forEach(filter -> {
+                    if (line.startsWith(filter) || line.startsWith("# HELP " + filter) || line.startsWith("# TYPE " + filter)) {
+                        resultBuilder.append(line + System.getProperty("line.separator"));
+                    }
+                });
+            } else {
+                resultBuilder.append(line + System.getProperty("line.separator"));
+            }
         });
 
         return ResponseEntity.ok().body(resultBuilder.toString());
