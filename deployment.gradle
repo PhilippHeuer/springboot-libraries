@@ -16,17 +16,6 @@ test {
 }
 
 /**
- * Javadoc
- */
-javadoc {
-	options {
-		title = "${project.artifactName} (v${project.version})"
-		windowTitle = "${project.artifactName} (v${project.version})"
-		encoding = "UTF-8"
-	}
-}
-
-/**
  * Sources - build a jar with source files
  */
 task sourcesJar(type: Jar, dependsOn: classes, description: 'Builds the sourcesJar.', group: 'build') {
@@ -35,19 +24,11 @@ task sourcesJar(type: Jar, dependsOn: classes, description: 'Builds the sourcesJ
 	classifier = 'sources'
 }
 
-// build a jar with javadoc
-task javadocJar(type: Jar, dependsOn: javadoc, description: 'Builds the javadocJar.', group: 'build') {
-	classifier = 'javadoc'
-	baseName = baseName.toLowerCase()
-	from javadoc.destinationDir
-}
-
 /**
  * Artifacts
  */
 artifacts {
 	archives sourcesJar
-	archives javadocJar
 }
 
 /**
@@ -78,7 +59,6 @@ publishing {
 		mainProject(MavenPublication) {
 			from project.components.java
 			artifact sourcesJar
-			artifact javadocJar
 			groupId project.group
 			artifactId String.valueOf(project.artifactName).toLowerCase()
 			version project.version
