@@ -8,4 +8,4 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @ComponentScan("com.github.philippheuer.webfluxerror")
-public class WebFluxErrorModule {}
+public class WebFluxErrorAutoConfiguration {}
