@@ -1,0 +1,27 @@
+// Dependencies
+dependencies {
+    // Modules
+    compile project(':' + rootProject.name + '-boot-common')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
+
+    // Commons
+    compile group: 'org.apache.commons', name: 'commons-lang3'
+
+    // Exceptions
+    compile group: 'com.github.philippheuer.common', name: 'common-exceptions'
+
+    // Auth
+    compile group: 'com.auth0', name: 'java-jwt', version: '3.8.3'
+    compile group: 'com.auth0', name: 'jwks-rsa', version: '0.9.0'
+    compile group: 'com.github.ben-manes.caffeine', name: 'caffeine'
+}
+
+// Artifact Info
+project.ext {
+    artifactName = 'SpringBoot-Auth-JWT'
+    artifactDescription = 'SpringBoot Security - JWT'
+}
+
+// Deployment Script
+apply from: '../deployment.gradle'

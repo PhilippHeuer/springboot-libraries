@@ -4,7 +4,7 @@ dependencies {
     compile project(':' + rootProject.name + '-boot-common')
 
     // Exceptions
-    compile group: 'com.github.philippheuer.common', name: 'common-exceptions', version: '1.0.0'
+    compile group: 'com.github.philippheuer.common', name: 'common-exceptions'
 
     // Optional Modules
     compileOnly group: 'org.springframework.boot', name: 'spring-boot-starter-web'

@@ -1,8 +1,9 @@
 package com.github.philippheuer.springboot.error.handler;
 
 import com.github.philippheuer.common.exceptions.AbstractBaseException;
-import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ContextedException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -22,8 +23,9 @@ import java.util.Map;
  */
 @ControllerAdvice
 @ConditionalOnClass(org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler.class)
-@Slf4j
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+
+    private final Logger log = LoggerFactory.getLogger("RestExceptionHandler");
 
     @ExceptionHandler
     protected ResponseEntity<Object> handleConflict(Exception ex, WebRequest request, HttpServletResponse response) {
