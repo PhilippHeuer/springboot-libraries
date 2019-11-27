@@ -5,6 +5,8 @@ import com.github.philippheuer.springboot.metric.core.config.CollectorConfigurat
 import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
 import org.camunda.bpm.engine.ProcessEngine;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +18,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Service
-@Slf4j
 public class MetricCollectorService {
+
+    private static final Logger log = LoggerFactory.getLogger("MetricCollectorService");
 
     @Autowired
     private MeterRegistry meterRegistry;
