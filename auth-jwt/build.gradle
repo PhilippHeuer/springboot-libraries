@@ -15,6 +15,11 @@ dependencies {
     compile group: 'com.auth0', name: 'java-jwt', version: '3.8.3'
     compile group: 'com.auth0', name: 'jwks-rsa', version: '0.9.0'
     compile group: 'com.github.ben-manes.caffeine', name: 'caffeine'
+
+    // Optional Modules
+    // - Camunda
+    compileOnly group: 'org.camunda.bpm', name: 'camunda-engine-spring'
+    compileOnly group: 'org.camunda.bpm', name: 'camunda-engine-rest'
 }
 
 // Artifact Info
