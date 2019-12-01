@@ -12,6 +12,7 @@ import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.philippheuer.common.exceptions.DownstreamServiceNotAvailable;
 import com.github.philippheuer.springboot.auth.jwt.domain.JWTAuthenticationToken;
+import com.github.philippheuer.springboot.auth.jwt.util.HttpClientUrlJwkProvider;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -174,7 +175,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
      */
     private void loadKeys(String issuer, String url) {
         try {
-            UrlJwkProvider provider = new UrlJwkProvider(new URL(url), 5000, 5000);
+            UrlJwkProvider provider = new HttpClientUrlJwkProvider(new URL(url), 5000, 5000);
             provider.getAll().forEach(key -> {
                 log.debug("Loaded key [{}] from {}", key.getId(), issuer);
                 jwksKeys.put(key.getId(), key);
