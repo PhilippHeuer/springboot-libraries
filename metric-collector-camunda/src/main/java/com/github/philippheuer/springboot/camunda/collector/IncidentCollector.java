@@ -41,6 +41,7 @@ public class IncidentCollector implements IMetricCollector {
                 .collect(Collectors.toList());
 
         // collect definition ids
+        processDefinitionIds.clear();
         processEngine.getRepositoryService()
                 .createProcessDefinitionQuery()
                 .list()
