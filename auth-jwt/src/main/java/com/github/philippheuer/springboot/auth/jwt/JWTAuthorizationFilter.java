@@ -103,7 +103,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 
     private UsernamePasswordAuthenticationToken getAuthentication(HttpServletRequest request) {
         var token = request.getHeader(TOKEN_HEADER);
-        if (StringUtils.isNotEmpty(token) && token.startsWith(TOKEN_PREFIX)) {
+        if (StringUtils.isNotEmpty(token) && token.toUpperCase().startsWith(TOKEN_PREFIX.toUpperCase())) {
             try {
                 String tokenValue = token.substring(TOKEN_PREFIX.length());
                 DecodedJWT jwt = JWT.decode(tokenValue);
