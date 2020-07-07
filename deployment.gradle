@@ -74,34 +74,6 @@ publishing {
 }
 
 /**
- * Artifactory Upload
- */
-artifactory {
-	contextUrl = 'https://oss.jfrog.org'
-	publish {
-		repository {
-			repoKey = 'oss-snapshot-local'
-			username = System.getenv("ARTIFACTORY_USER")
-			password = System.getenv("ARTIFACTORY_API_KEY")
-		}
-		defaults {
-			publications('mainProject')
-			publishArtifacts = true
-			publishPom = true
-			properties = [
-					'build.number': String.valueOf(System.getenv("CI_PIPELINE_IID")),
-					'build.name'  : String.valueOf(project.artifactName).toLowerCase()
-			]
-		}
-	}
-	resolve {
-		repoKey = 'jcenter'
-	}
-	clientConfig.info.setBuildName(String.valueOf(project.name).toLowerCase())
-	clientConfig.info.setBuildNumber(String.valueOf(System.getenv("CI_PIPELINE_IID")))
-}
-
-/**
  * Bintray Upload
  */
 bintray {

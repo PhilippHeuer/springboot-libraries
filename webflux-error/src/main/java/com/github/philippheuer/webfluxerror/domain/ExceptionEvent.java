@@ -1,6 +1,6 @@
 package com.github.philippheuer.webfluxerror.domain;
 
-import com.github.philippheuer.events4j.domain.Event;
+import com.github.philippheuer.events4j.core.domain.Event;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

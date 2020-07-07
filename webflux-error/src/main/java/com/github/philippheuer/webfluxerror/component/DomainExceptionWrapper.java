@@ -1,6 +1,6 @@
 package com.github.philippheuer.webfluxerror.component;
 
-import com.github.philippheuer.events4j.EventManager;
+import com.github.philippheuer.events4j.core.EventManager;
 import com.github.philippheuer.webfluxerror.domain.ExceptionEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ContextedRuntimeException;
@@ -34,7 +34,7 @@ class DomainExceptionWrapper extends DefaultErrorAttributes {
         log.trace("ErrorAttributes: Starting with the following context: " + errorAttributes);
 
         // generate event for the exception (can be reported to user-defined services)
-        eventManager.dispatchEvent(new ExceptionEvent(error));
+        eventManager.publish(new ExceptionEvent(error));
 
         // prepare new error attributes
         Map<String, Object> errorResponse = new LinkedHashMap<>();

@@ -3,14 +3,17 @@ dependencies {
     // Spring
     compile group: 'org.springframework.boot', name: 'spring-boot-starter'
 
+    // Unleash
+    compile group: 'no.finn.unleash', name: 'unleash-client-java', version: '3.3.3'
+
     // Events4J
     compile group: 'com.github.philippheuer.events4j', name: 'events4j-core', version: '0.9.1'
 }
 
 // Artifact Info
 project.ext {
-    artifactName = 'SpringBoot-Events4J'
-    artifactDescription = 'SpringBoot Events4J Component'
+    artifactName = 'SpringBoot-Unleash'
+    artifactDescription = 'SpringBoot Unleash Starter'
 }
 
 // Deployment Script
